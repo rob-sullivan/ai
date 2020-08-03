@@ -2,9 +2,9 @@
 
 # Importing the libraries
 import numpy as np
-from scipy.misc import imresize
-from gym.core import ObservationWrapper
-from gym.spaces.box import Box
+from scipy.misc import imresize #used to resize an image
+from gym.core import ObservationWrapper #add functionality to environments to feed to our agent
+from gym.spaces.box import Box #use this to set up the observation space and the action space
 
 # Preprocessing the Images
 
