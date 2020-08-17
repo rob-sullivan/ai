@@ -112,7 +112,7 @@ def eligibility_trace(batch):
         inputs.append(state)
         targets.append(target)
     return torch.from_numpy(np.array(inputs, dtype = np.float32)), torch.stack(targets)
-#test
+#test1
 # Making the moving average on 100 steps
 class MA:
     def __init__(self, size):
