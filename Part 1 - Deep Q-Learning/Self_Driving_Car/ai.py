@@ -53,7 +53,7 @@ class Dqn():
         self.gamma = gamma
         self.reward_window = []
         self.model = Network(input_size, nb_action)
-        self.memory = ReplayMemory(100000)
+        self.memory = ReplayMemory(100)
         self.optimizer = optim.Adam(self.model.parameters(), lr = 0.001)
         self.last_state = torch.Tensor(input_size).unsqueeze(0)
         self.last_action = 0

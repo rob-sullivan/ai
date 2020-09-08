@@ -129,6 +129,7 @@ class MA:
         return np.mean(self.list_of_rewards)
 ma = MA(100)
 
+#training the a.i
 loss = nn.MSELoss()
 optimizer = optim.Adam(cnn.parameters(), lr=0.001)
 nb_epoch = 100
@@ -139,3 +140,16 @@ for epoch in range(1, nb_epoch + 1):
         input, targets = Variable(inputs), Variable(targets)
         predictions = cnn(inputs)
         loss_error = loss(predictions, targets)
+        optimizer.zero_grad()
+        loss_error.backward()
+        optimizer.step()
+    rewards_steps = n_steps.rewards_steps()
+    ma.add(rewards_steps)
+    avg_reward = ma.average()
+    #we want to see average reward over time (epochs)
+    print("Training A.I, Epoch: %s, Average Reward: %s" % (str(epoch), str(avg_reward)))
+    if avg_reward >= 1500:
+        print("Congradulations, your AI wins")
+        break
+# closing the doom environment
+doom_env.close()
