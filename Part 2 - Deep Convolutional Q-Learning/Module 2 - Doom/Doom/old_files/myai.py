@@ -135,7 +135,7 @@ optimizer = optim.Adam(cnn.parameters(), lr=0.001)
 nb_epoch = 100
 for epoch in range(1, nb_epoch + 1):
     memory.run_steps(200)
-    for batch in memory.sample_batch(128):
+    for batch in memory.sample_batch(128): #will give us the last 128 steps that were run (learning happens here)
         input, targets = eligibility_trace(batch)
         input, targets = Variable(inputs), Variable(targets)
         predictions = cnn(inputs)

@@ -43,7 +43,7 @@ def init():
     sand = np.zeros((longueur,largeur)) # initializing the sand array with only zeros
     goal_x = 20 # the goal to reach is at the upper left of the map (the x-coordinate is 20 and not 0 because the car gets bad reward if it touches the wall)
     goal_y = largeur - 20 # the goal to reach is at the upper left of the map (y-coordinate)
-    first_update = False # trick to initialize the map only once
+    first_update = True # trick to initialize the map only once
 
 # Initializing the last distance
 last_distance = 0
@@ -99,7 +99,7 @@ class Ball3(Widget): # sensor 3 (see kivy tutorials: kivy https://kivy.org/docs/
 class Game(Widget):
 
     car = ObjectProperty(None) # getting the car object from our kivy file
-    ball1 = ObjectProperty(None) # getting the sensor 1 object from our kivy file
+    ball1 = ObjectProperty(None) # getting the sensor 1 object from our kivy  file
     ball2 = ObjectProperty(None) # getting the sensor 2 object from our kivy file
     ball3 = ObjectProperty(None) # getting the sensor 3 object from our kivy file
 
