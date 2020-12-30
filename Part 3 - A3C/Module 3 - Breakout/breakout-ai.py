@@ -182,7 +182,9 @@ def train(rank, params, shared_model, optimiser): # rank desynchronise each agen
         log_probs = []
         rewards = []
         entropies = []
-        for step in range(params.num_steps): # loop over exploration steps
+
+        # loop over exploration steps
+        for step in range(params.num_steps): 
             #first, second and third output
             value, action_values, (hx,cx) = model((Variable(state.unsqueeze(0)), (hx, cx))) # get a batch of inputs not an individual input
             prob = F.softmax(action_values)
@@ -191,11 +193,204 @@ def train(rank, params, shared_model, optimiser): # rank desynchronise each agen
             entropies.append(entropy)
             action = prob.multinomial().data
             log_prob = log_prob.gather(1, Variable(action))
-            
+            values.append(value)
+            log_prob.append(log_prob)
+            state, reward, done = env.step(action.numpy())
+            done = (done or episode_length >= params.max_episode_length)
+            reward = max(min(reward, 1), -1)
+            if done:
+                episode_length = 0
+                state = env.reset()
+            state = torch.from_numpy(state)
+            rewards.append(reward)
+            if done: #stop exploration and move on to updating shared moddel
+                break
 
+        #init cuml reward
+        R = torch.zeros(1, 1)
+        if not done: # get last state shared by the network
+            value, _, _ = model.((Variable(state.unsqueeze(0)), (hx, cx)))
+            R = value.data 
+        values.append(Variable(R))
+        #loss of actor
+        policy_loss = 0
+        #loss of critic
+        value_loss = 0
+        R = Variable(R)
+        #generalisaed advantage estimation vation function
+        # A(a,s) = Q(a,s) - V(s)
+        gae = torch.zeros(1, 1)
 
-
-    
+        for i in reversed(range(len(rewards))): # reversed is used so we can move back in time
+            R = params.gamma * R + rewards[i] # R = r_0 + gamma * r_1 + gamma^2 * r_2 + ... + gamma^(n-1) * r_{n-1} + gamma^nb_steps * V(last_state)
+            advantage = R - values[i]
+            value_loss = value_loss + 0.5 * advantage.pow(2) # this is the value loss minus the critic # Q*(a*,s = V*(s)
+            TD = rewards[i] + params.gamma * values[i + 1].data - values[i].data # temporal difference of state values
+            gae = gae * params.gamma * params.tau + TD # gae = sum_i (gamma*tau*)^i * TD(i)
+            policy_loss = policy_loss - log_probs[i] * Variable(gae) - 0.01 * entropies[i] #policy_loss = -sum_i log(pi_i)*gae + 0.01*h_i #0.01 is to prevent falling into an issue where everything has 0 except 1
+        optimizer().zero_grad()
+        (policy_loss + 0.5 * value_loss).backward()7
+        #stop taking extremly large losses and degenerate the algorithm
+        torch.nn.utils.clip_grad_norm(model.parameters(), 40)
+        ensure_shared_grads(model, shared_model)
+        optimizer.step()
 
 
 #test.py is last one implement a test agent will play breakout without updating the model (seperate from training)
+
+# Test Agent
+
+import torch
+import torch.nn.functional as F
+from envs import create_atari_env
+from model import ActorCritic
+from torch.autograd import Variable
+import time
+from collections import deque
+
+# Making the test agent (won't update the model but will just use the shared model to explore)
+def test(rank, params, shared_model):
+    torch.manual_seed(params.seed + rank) # asynchronizing the test agent
+    env = create_atari_env(params.env_name, video=True) # running an environment with a video
+    env.seed(params.seed + rank) # asynchronizing the environment
+    model = ActorCritic(env.observation_space.shape[0], env.action_space) # creating one model
+    model.eval() # putting the model in "eval" model because it won't be trained
+    state = env.reset() # getting the input images as numpy arrays
+    state = torch.from_numpy(state) # converting them into torch tensors
+    reward_sum = 0 # initializing the sum of rewards to 0
+    done = True # initializing done to True
+    start_time = time.time() # getting the starting time to measure the computation time
+    actions = deque(maxlen=100) # cf https://pymotw.com/2/collections/deque.html
+    episode_length = 0 # initializing the episode length to 0
+    while True: # repeat
+        episode_length += 1 # incrementing the episode length by one
+        if done: # synchronizing with the shared model (same as train.py)
+            model.load_state_dict(shared_model.state_dict())
+            cx = Variable(torch.zeros(1, 256), volatile=True)
+            hx = Variable(torch.zeros(1, 256), volatile=True)
+        else:
+            cx = Variable(cx.data, volatile=True)
+            hx = Variable(hx.data, volatile=True)
+        value, action_value, (hx, cx) = model((Variable(state.unsqueeze(0), volatile=True), (hx, cx)))
+        prob = F.softmax(action_value)
+        action = prob.max(1)[1].data.numpy() # the test agent does not explore, it directly plays the best action
+        state, reward, done, _ = env.step(action[0, 0]) # done = done or episode_length >= params.max_episode_length
+        reward_sum += reward
+        if done: # printing the results at the end of each part
+            print("Time {}, episode reward {}, episode length {}".format(time.strftime("%Hh %Mm %Ss", time.gmtime(time.time() - start_time)), reward_sum, episode_length))
+            reward_sum = 0 # reinitializing the sum of rewards
+            episode_length = 0 # reinitializing the episode length
+            actions.clear() # reinitializing the actions
+            state = env.reset() # reinitializing the environment
+            time.sleep(60) # doing a one minute break to let the other agents practice (if the game is done)
+        state = torch.from_numpy(state) # new state and we continue
+
+# Improvement of the Gym environment with universe
+import cv2
+import gym
+import numpy as np
+from gym.spaces.box import Box
+from gym import wrappers
+
+
+# Taken from https://github.com/openai/universe-starter-agent
+
+
+def create_atari_env(env_id, video=False):
+    env = gym.make(env_id)
+    if video:
+        env = wrappers.Monitor(env, 'test', force=True)
+    env = MyAtariRescale42x42(env)
+    env = MyNormalizedEnv(env)
+    return env
+
+
+def _process_frame42(frame):
+    frame = frame[34:34 + 160, :160]
+    # Resize by half, then down to 42x42 (essentially mipmapping). If
+    # we resize directly we lose pixels that, when mapped to 42x42,
+    # aren't close enough to the pixel boundary.
+    frame = cv2.resize(frame, (80, 80))
+    frame = cv2.resize(frame, (42, 42))
+    frame = frame.mean(2)
+    frame = frame.astype(np.float32)
+    frame *= (1.0 / 255.0)
+    #frame = np.reshape(frame, [1, 42, 42])
+    return frame
+
+
+class MyAtariRescale42x42(gym.ObservationWrapper):
+
+    def __init__(self, env=None):
+        super(MyAtariRescale42x42, self).__init__(env)
+        self.observation_space = Box(0.0, 1.0, [1, 42, 42])
+
+    def _observation(self, observation):
+    	return _process_frame42(observation)
+
+
+class MyNormalizedEnv(gym.ObservationWrapper):
+
+    def __init__(self, env=None):
+        super(MyNormalizedEnv, self).__init__(env)
+        self.state_mean = 0
+        self.state_std = 0
+        self.alpha = 0.9999
+        self.num_steps = 0
+
+    def _observation(self, observation):
+        self.num_steps += 1
+        self.state_mean = self.state_mean * self.alpha + \
+            observation.mean() * (1 - self.alpha)
+        self.state_std = self.state_std * self.alpha + \
+            observation.std() * (1 - self.alpha)
+
+        unbiased_mean = self.state_mean / (1 - pow(self.alpha, self.num_steps))
+        unbiased_std = self.state_std / (1 - pow(self.alpha, self.num_steps))
+
+        ret = (observation - unbiased_mean) / (unbiased_std + 1e-8)
+        return np.expand_dims(ret, axis=0)
+
+# Main code
+
+from __future__ import print_function #brings print function from Python 3 into Python 2.6+.
+import os
+import torch
+import torch.multiprocessing as mp
+from envs import create_atari_env
+from model import ActorCritic
+from train import train
+from test import test
+import my_optim
+
+# Gathering all the parameters (that we can modify to explore)
+class Params():
+    def __init__(self):
+        self.lr = 0.0001
+        self.gamma = 0.99
+        self.tau = 1.
+        self.seed = 1
+        self.num_processes = 16
+        self.num_steps = 20
+        self.max_episode_length = 10000
+        self.env_name = 'Breakout-v0'
+
+# Main run
+os.environ['OMP_NUM_THREADS'] = '1' # 1 thread per core
+params = Params() # creating the params object from the Params class, that sets all the model parameters
+torch.manual_seed(params.seed) # setting the seed (not essential)
+env = create_atari_env(params.env_name) # we create an optimized environment thanks to universe
+shared_model = ActorCritic(env.observation_space.shape[0], env.action_space) # shared_model is the model shared by the different agents (different threads in different cores)
+shared_model.share_memory() # storing the model in the shared memory of the computer, which allows the threads to have access to this shared memory even if they are in different cores
+optimizer = my_optim.SharedAdam(shared_model.parameters(), lr=params.lr) # the optimizer is also shared because it acts on the shared model
+optimizer.share_memory() # same, we store the optimizer in the shared memory so that all the agents can have access to this shared memory to optimize the model
+processes = [] # initializing the processes with an empty list
+p = mp.Process(target=test, args=(params.num_processes, params, shared_model)) # allowing to create the 'test' process with some arguments 'args' passed to the 'test' target function - the 'test' process doesn't update the shared model but uses it on a part of it - torch.multiprocessing.Process runs a function in an independent thread
+p.start() # starting the created process p
+processes.append(p) # adding the created process p to the list of processes
+for rank in range(0, params.num_processes): # making a loop to run all the other processes that will be trained by updating the shared model
+    p = mp.Process(target=train, args=(rank, params, shared_model, optimizer))
+    p.start()
+    processes.append(p)
+for p in processes: # creating a pointer that will allow to kill all the threads when at least one of the threads, or main.py will be killed, allowing to stop the program safely
+    p.join()

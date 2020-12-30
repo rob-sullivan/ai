@@ -1,6 +1,4 @@
 # Improvement of the Gym environment with universe
-
-
 import cv2
 import gym
 import numpy as np
