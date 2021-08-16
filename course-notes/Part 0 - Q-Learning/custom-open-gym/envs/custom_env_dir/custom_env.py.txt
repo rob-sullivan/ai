@@ -1,9 +1,0 @@
-import gym
-
-class CustomEnv(gym.Env):
-	def __init__(self):
-		print('Env Initialised')
-	def step(self):
-		print('step success!')
-	def reset(self):
-		print('Env reset')
