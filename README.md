@@ -1,4 +1,3 @@
 # ai repo
-
-## AI Text Classification
-Training a supervised learning algorithm for text classification using a TextClassification dataset and pytorch.
+## Artificial Intelligence A-Z Course
+Using pytorch learning to create self driving cars, teach a computer to play the game doom and the classic game breakout.
