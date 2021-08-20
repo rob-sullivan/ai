@@ -9,7 +9,7 @@ node_modules
 
 # custom ignores
 .dlenv
-dl-project-2/dataset
+/dl-project-2/dataset
 
 # Log files
 npm-debug.log*
