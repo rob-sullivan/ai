@@ -9,7 +9,7 @@ node_modules
 # custom ignores
 .venv/
 #/ml-az-course/Part 1 - Data Preprocessing
-/ml-az-course/Part 2 - Regression
+#/ml-az-course/Part 2 - Regression
 /ml-az-course/Part 3 - Classification
 /ml-az-course/Part 4 - Clustering
 /ml-az-course/Part 5 - Association Rule Learning
