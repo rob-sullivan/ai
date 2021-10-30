@@ -75,9 +75,9 @@ class Ann():
         prediction = self.ann.predict(self.sc.transform([data])) > 0.5
         prediction = prediction[0][0]
         if prediction:
-            print("this customer will leave the bank")
+            print("this customer SHOULD get a mortgage :)")
         else:
-            print("this customer will leave the bank")
+            print("this customer should NOT get a mortgage :(")
 
     def predictTest(self):
         self.y_pred = self.ann.predict(self.X_test)
@@ -106,7 +106,7 @@ if __name__ == "__main__":
         Estimated Salary: $ 50000
 
     """
-    #observation = [1, 0, 0, 600, 1, 40, 3, 60000, 2, 1, 1, 50000]
-    #ai.predict(observation)
+    observation = [1, 0, 0, 600, 0, 40, 3, 60000, 2, 1, 1, 50000]
+    ai.predict(observation)
     ai.predictTest()
     
