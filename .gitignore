@@ -9,18 +9,17 @@ node_modules
 # custom ignores
 .venv/
 /ml-az-course/
-/ml-az-course/Part 1 - Data Preprocessing
-/ml-az-course/Part 2 - Regression
-/ml-az-course/Part 3 - Classification
-/ml-az-course/Part 4 - Clustering
-/ml-az-course/Part 5 - Association Rule Learning
-/ml-az-course/Part 6 - Reinforcement Learning
-/ml-az-course/Part 7 - Natural Language Processing
-/ml-az-course/Part 8 - Deep Learning
-/ml-az-course/Part 9 - Dimensionality Reduction
-/ml-az-course/Part 10 - Model Selection _ Boosting
+#/ml-az-course/Part 1 - Data Preprocessing
+#/ml-az-course/Part 2 - Regression
+#/ml-az-course/Part 3 - Classification
+#/ml-az-course/Part 4 - Clustering
+#/ml-az-course/Part 5 - Association Rule Learning
+#/ml-az-course/Part 6 - Reinforcement Learning
+#/ml-az-course/Part 7 - Natural Language Processing
+#/ml-az-course/Part 8 - Deep Learning
+#/ml-az-course/Part 9 - Dimensionality Reduction
+#/ml-az-course/Part 10 - Model Selection _ Boosting
 
-course-notes
 # Log files
 npm-debug.log*
 yarn-debug.log*
