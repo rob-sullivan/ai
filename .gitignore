@@ -7,7 +7,8 @@ node_modules
 .env.*.local
 
 # custom ignores
-venv/
+/venv/
+/Python-Reinforcement-Learning-Projects-master/
 ml-az-course-files/
 
 
