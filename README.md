@@ -12,8 +12,5 @@ Using pytorch to solve a Banking Customer Churn problem Convolutional Neural Net
 ## Machine Learning A-Z Course
 Using Scikit Learn to do Data Preprocessing, Regression, Classification, Clustering, Association Rule Learning, Reinforcement Learning, Natural Language Processing, Deep Learning, Dimensionality Reduction (PCA, LDA, Kernel PCA), Model Selection & Boosting: k-fold Cross Validation, Parameter Tuning, Grid Search, XGBoost.
 
-# Neural Networks Demystified
-Code used as part of learning from Welch Labs Youtube series on explaining neural networks. Youtube: https://www.youtube.com/watch?v=bxe2T-V8XRs
-
 # Reinforcement Learning Projects
 chatbot
