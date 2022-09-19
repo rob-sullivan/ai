@@ -5,7 +5,12 @@ node_modules
 # local env files
 .env.local
 .env.*.local
+
+# custom ignores
 /venv/
+/Python-Reinforcement-Learning-Projects-master/
+/ml-az-course-files/
+
 
 # Log files
 npm-debug.log*
@@ -20,3 +25,4 @@ yarn-error.log*
 *.njsproj
 *.sln
 *.sw?
+.Rproj.user
