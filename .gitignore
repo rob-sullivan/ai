@@ -9,7 +9,7 @@ node_modules
 # custom ignores
 /venv/
 /Python-Reinforcement-Learning-Projects-master/
-ml-az-course-files/
+/ml-az-course-files/
 
 
 # Log files
