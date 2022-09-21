@@ -24,7 +24,7 @@ Using Scikit Learn to do Data Preprocessing, Regression, Classification, Cluster
 10. Model Selection & Boosting: k-fold Cross Validation, Parameter Tuning, Grid Search, XGBoost
 
 ## Reinforcement Learning Projects
-Chatbot is trained on Cornell Movie-Dialogs Corpus to demonstrate Policy gradient methods, Long Short-Term Memory (LSTM).
+Chatbot is trained on cornell movie-dialogs corpus to demonstrate policy gradient methods, long short-term memory (LSTM).
 1. Balancing a cart pole
 2. Playing atari games
 3. Simulating control tasks
