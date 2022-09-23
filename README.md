@@ -7,6 +7,6 @@
 5. Association Rule Learning, 
 6. Reinforcement Learning,
 7. Natural Language Processing, 
-8. Deep Learning, 
+8. ~~Deep Learning~~ Removed DL projects, covered in a different branch
 9. Dimensionality Reduction (PCA, LDA, Kernel PCA), 
 10. Model Selection & Boosting: k-fold Cross Validation, Parameter Tuning, Grid Search, XGBoost
