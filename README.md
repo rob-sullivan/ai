@@ -1,6 +1,6 @@
-# ai repo
+# Artificial Intelligence Projects and Code
 
-## Artificial Intelligence Text Classification
+## AI Text Classification
 Training a supervised learning algorithm for text classification using a TextClassification dataset and pytorch.
 
 ## Artificial Intelligence A-Z Course
