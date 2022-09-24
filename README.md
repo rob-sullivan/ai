@@ -3,6 +3,17 @@
 ## AI Text Classification
 Training a supervised learning algorithm for text classification using a TextClassification dataset and pytorch.
 
+## Reinforcement Learning Projects
+Chatbot is trained on cornell movie-dialogs corpus to demonstrate policy gradient methods, long short-term memory (LSTM).
+1. Balancing a cart pole
+2. Playing atari games
+3. Simulating control tasks
+4. Virtual worlds in minecraft
+5. Learning to play go
+6. Chatbot
+7. Deep learning image classifier
+8. Predicting future stock prices
+
 ## Artificial Intelligence A-Z Course
 Using pytorch to create self driving cars, teach a computer to play the game doom and the classic game breakout.
 
@@ -36,13 +47,11 @@ Using Scikit Learn to do Data Preprocessing, Regression, Classification, Cluster
 9. Dimensionality Reduction (PCA, LDA, Kernel PCA), 
 10. Model Selection & Boosting: k-fold Cross Validation, Parameter Tuning, Grid Search, XGBoost
 
-## Reinforcement Learning Projects
-Chatbot is trained on cornell movie-dialogs corpus to demonstrate policy gradient methods, long short-term memory (LSTM).
-1. Balancing a cart pole
-2. Playing atari games
-3. Simulating control tasks
-4. Virtual worlds in minecraft
-5. Learning to play go
-6. Chatbot
-7. Deep learning image classifier
-8. Predicting future stock prices
+## Deep Learning and Computer Vision A-Z Course
+Using computer vision and Ai to create a face happiness detector, object detector and image creator.
+
+1. Face Detection
+2. Object Detection
+3. Generative Adversarial Networks
+
+
