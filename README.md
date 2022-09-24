@@ -6,6 +6,12 @@ Training a supervised learning algorithm for text classification using a TextCla
 ## Artificial Intelligence A-Z Course
 Using pytorch to create self driving cars, teach a computer to play the game doom and the classic game breakout.
 
+1. Fundamentals of Reinforcement Learning
+2. Q Learning
+3. Deep Q Learning
+4. Deep Convolutional Q-Learning
+5. Asynchronous Actor Critic (A3C)
+
 ## Deep Learning A-Z Course
 Using pytorch to solve a Banking Customer Churn problem, Convolutional Neural Networks for Image Recognition, Recurrent Neural Networks to predict Stock Prices, Self-Organizing Maps to investigate Fraud, Boltzmann Machines to create a Recomender System and Stacked Autoencoders* to take on the challenge for the Netflix $1 Million prize.
 
