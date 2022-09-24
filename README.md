@@ -1,4 +1,4 @@
 # ai repo
 
 ## AI Text Classification
-Training a supervised learning algorithm for text classification using a TextClassification dataset and pytorch.
+Training a supervised learning algorithm for text classification to categorise news articles by training a model through pytorch on AG_NEWS dataset.
