@@ -33,3 +33,7 @@ Chatbot is trained on cornell movie-dialogs corpus to demonstrate policy gradien
 6. Chatbot
 7. Deep learning image classifier
 8. Predicting future stock prices
+
+## Deep Learning and Computer Vision A-Z Course
+Using OpenCV, SSD & GANs to do the following creating Happiness Detector (face detection with OpenCV), Horse Galloping Detector (object detection with SSD) and Image Creation with GANS (Generative Adversarial Networks).
+
