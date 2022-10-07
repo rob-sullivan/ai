@@ -206,13 +206,16 @@ class CarApp(App):
         clearbtn = Button(text = 'clear')
         savebtn = Button(text = 'save', pos = (parent.width, 0))
         loadbtn = Button(text = 'load', pos = (2 * parent.width, 0))
+        graphbtn = Button(text = 'graph', pos = (3 * parent.width,0))
         clearbtn.bind(on_release = self.clear_canvas)
         savebtn.bind(on_release = self.save)
         loadbtn.bind(on_release = self.load)
+        graphbtn.bind(on_release = self.graph)
         parent.add_widget(self.painter)
         parent.add_widget(clearbtn)
         parent.add_widget(savebtn)
         parent.add_widget(loadbtn)
+        parent.add_widget(graphbtn)
         return parent
 
     def clear_canvas(self, obj):
@@ -223,12 +226,17 @@ class CarApp(App):
     def save(self, obj):
         print("saving brain...")
         brain.save()
-        plt.plot(scores)
-        plt.show()
 
     def load(self, obj):
         print("loading last saved brain...")
         brain.load()
+
+    def graph(self, obj):
+        print("graphing brain")
+        plt.plot(scores)
+        plt.ylabel("Rewards")
+        plt.xlabel("Episodes")
+        plt.show()
 
 # Running the whole thing
 if __name__ == '__main__':
