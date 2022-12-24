@@ -20,7 +20,7 @@ def detect(gray_frame, org_frame):
         roi_color = org_frame[y:y+h, x:x+w]
 
         #use region of interest to detect eyes, cuts down on computation
-        eyes = eye_cascade.detectMultiScale(roi_gray, 1.1, 3) #apply to grey image, scale 1.1 with min neighbours of 3
+        eyes = eye_cascade.detectMultiScale(roi_gray, 1.1, 22) #apply to grey image, scale 1.1 with min neighbours of 3
         #draw rectangle around eyes when detected.
         for (ex, ey, ew, eh) in eyes:
             cv2.rectangle(roi_color, (ex, ey), (ex+ew, ey+eh), (0, 255, 0), 2)
