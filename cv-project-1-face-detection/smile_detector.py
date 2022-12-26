@@ -1,6 +1,4 @@
 
-
-
 import cv2
 
 #import haar feature cascades
