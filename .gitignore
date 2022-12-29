@@ -9,11 +9,10 @@ node_modules
 # custom ignores
 /venv/
 /rl_projects_venv/
+cv_projects_venv
+
 /Python-Reinforcement-Learning-Projects-master/
 /ml-az-course-files/
-
-/cv-project-2-object-detection/funny_dog.mp4
-/cv-project-2-object-detection/ssd300_mAP_77.43_v2.pth
 
 # Log files
 npm-debug.log*
