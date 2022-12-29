@@ -11,7 +11,7 @@ node_modules
 /rl_projects_venv/
 /Python-Reinforcement-Learning-Projects-master/
 /ml-az-course-files/
-/cv-project-2-object-detection/data
+
 /cv-project-2-object-detection/layers
 /cv-project-2-object-detection/funny_dog.mp4
 /cv-project-2-object-detection/ssd300_mAP_77.43_v2.pth
