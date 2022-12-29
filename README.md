@@ -1,9 +1,6 @@
 # Python Reinforcement Learning Projects 
 ## Installation and environment:
-* VS Code
-* Download [Github](https://github.com/PacktPublishing/Python-Reinforcement-Learning-Projects), 
-* Install [Python 3.6](https://www.python.org/downloads/release/python-360/) locally (don't add to path)
-* using python 3.6 create a virtual environment: python3 -m venv rl_projects_venv
+[Github Repo](https://github.com/PacktPublishing/Python-Reinforcement-Learning-Projects) uses [Python 3.6](https://www.python.org/downloads/release/python-360/). This is needed for tensorflow 1.5 but out of date for gym, etc.
 
 ## Projects
 
