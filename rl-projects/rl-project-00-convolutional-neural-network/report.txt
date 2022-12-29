@@ -1,0 +1,73 @@
+TensorFlow 2.0 Upgrade Script
+-----------------------------
+Converted 1 files
+Detected 1 issues that require attention
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+File: .\cnn.py
+--------------------------------------------------------------------------------
+.\cnn.py:202:16: WARNING: *.save requires manual check. (This warning is only applicable if the code saves a tf.Keras model) Keras model.save now saves to the Tensorflow SavedModel format by default, instead of HDF5. To continue saving to HDF5, add the argument save_format='h5' to the save() function.
+================================================================================
+Detailed log follows:
+
+================================================================================
+================================================================================
+Input tree: '.'
+================================================================================
+--------------------------------------------------------------------------------
+Processing file '.\\cnn.py'
+ outputting to '.\\cnn.py'
+--------------------------------------------------------------------------------
+
+38:13: INFO: `name` passed to `name_scope`. Because you may be re-entering an existing scope, it is not safe to convert automatically,  the v2 name_scope does not support re-entering scopes by name.
+
+38:13: INFO: Renamed 'tf.name_scope' to 'tf.compat.v1.name_scope'
+39:31: INFO: Renamed 'tf.placeholder_with_default' to 'tf.compat.v1.placeholder_with_default'
+41:13: INFO: `name` passed to `name_scope`. Because you may be re-entering an existing scope, it is not safe to convert automatically,  the v2 name_scope does not support re-entering scopes by name.
+
+41:13: INFO: Renamed 'tf.name_scope' to 'tf.compat.v1.name_scope'
+42:21: INFO: Renamed 'tf.layers.conv2d' to 'tf.compat.v1.layers.conv2d'
+49:35: INFO: Multiplying scale arg of tf.contrib.layers.l2_regularizer by half to what tf.keras.regularizers.l2 expects.
+
+51:21: INFO: Renamed 'tf.layers.conv2d' to 'tf.compat.v1.layers.conv2d'
+58:35: INFO: Multiplying scale arg of tf.contrib.layers.l2_regularizer by half to what tf.keras.regularizers.l2 expects.
+
+60:21: INFO: Renamed 'tf.layers.max_pooling2d' to 'tf.compat.v1.layers.max_pooling2d'
+67:21: INFO: Renamed 'tf.layers.dropout' to 'tf.compat.v1.layers.dropout'
+69:21: INFO: Renamed 'tf.layers.conv2d' to 'tf.compat.v1.layers.conv2d'
+76:35: INFO: Multiplying scale arg of tf.contrib.layers.l2_regularizer by half to what tf.keras.regularizers.l2 expects.
+
+78:21: INFO: Renamed 'tf.layers.conv2d' to 'tf.compat.v1.layers.conv2d'
+85:35: INFO: Multiplying scale arg of tf.contrib.layers.l2_regularizer by half to what tf.keras.regularizers.l2 expects.
+
+87:21: INFO: Renamed 'tf.layers.max_pooling2d' to 'tf.compat.v1.layers.max_pooling2d'
+94:21: INFO: Renamed 'tf.layers.dropout' to 'tf.compat.v1.layers.dropout'
+96:13: INFO: `name` passed to `name_scope`. Because you may be re-entering an existing scope, it is not safe to convert automatically,  the v2 name_scope does not support re-entering scopes by name.
+
+96:13: INFO: Renamed 'tf.name_scope' to 'tf.compat.v1.name_scope'
+97:24: INFO: Renamed 'tf.layers.flatten' to 'tf.compat.v1.layers.flatten'
+98:19: INFO: Renamed 'tf.layers.dense' to 'tf.compat.v1.layers.dense'
+102:35: INFO: Multiplying scale arg of tf.contrib.layers.l2_regularizer by half to what tf.keras.regularizers.l2 expects.
+
+105:22: INFO: Renamed 'tf.layers.dropout' to 'tf.compat.v1.layers.dropout'
+106:21: INFO: Renamed 'tf.layers.dense' to 'tf.compat.v1.layers.dense'
+109:35: INFO: Multiplying scale arg of tf.contrib.layers.l2_regularizer by half to what tf.keras.regularizers.l2 expects.
+
+123:18: INFO: Renamed 'tf.Summary' to 'tf.compat.v1.Summary'
+124:12: INFO: Renamed 'tf.Summary' to 'tf.compat.v1.Summary'
+125:12: INFO: Renamed 'tf.Summary' to 'tf.compat.v1.Summary'
+138:19: INFO: Renamed 'tf.Session' to 'tf.compat.v1.Session'
+144:23: INFO: Renamed 'tf.data.Iterator' to 'tf.compat.v1.data.Iterator'
+161:23: INFO: Added keywords to args of function 'tf.reduce_mean'
+161:38: INFO: Renamed 'tf.nn.softmax_cross_entropy_with_logits_v2' to 'tf.nn.softmax_cross_entropy_with_logits'
+164:24: INFO: Renamed 'tf.train.AdamOptimizer' to 'tf.compat.v1.train.AdamOptimizer'
+167:31: INFO: Added keywords to args of function 'tf.argmax'
+167:57: INFO: Added keywords to args of function 'tf.argmax'
+168:27: INFO: Added keywords to args of function 'tf.reduce_mean'
+170:26: INFO: Renamed 'tf.global_variables_initializer' to 'tf.compat.v1.global_variables_initializer'
+179:25: INFO: Renamed 'tf.train.Saver' to 'tf.compat.v1.train.Saver'
+180:34: INFO: tf.summary.FileWriter requires manual check. The TF 1.x summary API cannot be automatically migrated to TF 2.0, so symbols have been converted to tf.compat.v1.summary.* and must be migrated manually. Typical usage will only require changes to the summary writing logic, not to individual calls like scalar(). For examples of the new summary API, see the Effective TF 2.0 migration document or check the TF 2.0 TensorBoard tutorials.
+180:34: INFO: Renamed 'tf.summary.FileWriter' to 'tf.compat.v1.summary.FileWriter'
+202:16: WARNING: *.save requires manual check. (This warning is only applicable if the code saves a tf.Keras model) Keras model.save now saves to the Tensorflow SavedModel format by default, instead of HDF5. To continue saving to HDF5, add the argument save_format='h5' to the save() function.
+--------------------------------------------------------------------------------
+
