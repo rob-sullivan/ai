@@ -8,6 +8,7 @@ node_modules
 
 # custom ignores
 /venv/
+/rl_projects_venv/
 /Python-Reinforcement-Learning-Projects-master/
 /ml-az-course-files/
 /cv-project-2-object-detection/data
