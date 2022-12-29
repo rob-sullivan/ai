@@ -1,11 +1,8 @@
 import gym
+import random
 
 #create and reset the environment
-environment = gym.make('CartPole-v1', render_mode="rgb_array")
-environment.reset()
+env = gym.make('CartPole-v0')
 
-#itterate the environment
-for dummy in range(100):
-    environment.reset()
-    environment.render() 
-    environment.step(environment.action_space.sample())
+states = env.observation_space.shape[0]
+actions = env.action_space.shape[0]
