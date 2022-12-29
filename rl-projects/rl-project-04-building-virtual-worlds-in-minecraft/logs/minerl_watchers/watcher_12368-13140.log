@@ -1,0 +1,8 @@
+[32m2022-09-24 23:15:17[0m [35mDESKTOP-T3NNS9R[0m [34mprocess_watcher[13264][0m [1;30mINFO[0m Process watcher started between parent 12368 and child 13140 
+[32m2022-09-24 23:17:44[0m [35mDESKTOP-T3NNS9R[0m [34mprocess_watcher[13264][0m [1;30mINFO[0m Parent is not running, hence we need terminate the child.
+[32m2022-09-24 23:17:44[0m [35mDESKTOP-T3NNS9R[0m [34mprocess_watcher[13264][0m [1;30mINFO[0m About to reap process tree of 13140:cmd.exe:C:\Windows\System32\cmd.exe i running, owner 12368, printing process tree status in termination order:
+[32m2022-09-24 23:17:44[0m [35mDESKTOP-T3NNS9R[0m [34mprocess_watcher[13264][0m [1;30mINFO[0m 	-15944:java.exe:C:\Program Files (x86)\Common Files\Oracle\Java\javapath_target_41912203\java.exe i running, owner 13140
+[32m2022-09-24 23:17:44[0m [35mDESKTOP-T3NNS9R[0m [34mprocess_watcher[13264][0m [1;30mINFO[0m 	-13140:cmd.exe:C:\Windows\System32\cmd.exe i running, owner 12368
+[32m2022-09-24 23:17:44[0m [35mDESKTOP-T3NNS9R[0m [34mprocess_watcher[13264][0m [1;30mINFO[0m Trying to SIGTERM 15944:java.exe:C:\Program Files (x86)\Common Files\Oracle\Java\javapath_target_41912203\java.exe i running, owner 13140
+[32m2022-09-24 23:17:44[0m [35mDESKTOP-T3NNS9R[0m [34mprocess_watcher[13264][0m [1;30mINFO[0m Process psutil.Process(pid=15944, name='java.exe', status='terminated', exitcode=15, started='23:15:14') terminated with exit code None
+[32m2022-09-24 23:17:44[0m [35mDESKTOP-T3NNS9R[0m [34mprocess_watcher[13264][0m [1;30mINFO[0m Process psutil.Process(pid=13140, name='cmd.exe', status='terminated', started='23:15:14') does not exist or is zombie.

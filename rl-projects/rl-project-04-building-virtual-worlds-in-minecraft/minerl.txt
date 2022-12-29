@@ -1,0 +1,10 @@
+https://learn.microsoft.com/en-us/windows/wsl/install
+
+https://stackoverflow.com/questions/61526437/deep-q-learning-without-openai-gym
+
+make sure you have [ubuntu installed on wsl](https://learn.microsoft.com/en-us/windows/wsl/install)
+make sure java is installed on wsl
+    sudo apt install openjdk-8-jdk
+
+install outside of vscode
+pip install git+https://github.com/minerllabs/minerl

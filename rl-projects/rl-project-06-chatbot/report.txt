@@ -1,0 +1,90 @@
+TensorFlow 2.0 Upgrade Script
+-----------------------------
+Converted 1 files
+Detected 19 issues that require attention
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+File: chatbot.py
+--------------------------------------------------------------------------------
+chatbot.py:216:0: WARNING: *.save requires manual check. (This warning is only applicable if the code saves a tf.Keras model) Keras model.save now saves to the Tensorflow SavedModel format by default, instead of HDF5. To continue saving to HDF5, add the argument save_format='h5' to the save() function.
+chatbot.py:217:0: WARNING: *.save requires manual check. (This warning is only applicable if the code saves a tf.Keras model) Keras model.save now saves to the Tensorflow SavedModel format by default, instead of HDF5. To continue saving to HDF5, add the argument save_format='h5' to the save() function.
+chatbot.py:394:41: WARNING: Using member tf.contrib.rnn.DropoutWrapper in deprecated module tf.contrib.rnn. (Manual edit required) tf.contrib.rnn.* has been deprecated, and widely used cells/functions will be moved to tensorflow/addons repository. Please check it there and file Github issues if necessary.
+chatbot.py:394:41: ERROR: Using member tf.contrib.rnn.DropoutWrapper in deprecated module tf.contrib. tf.contrib.rnn.DropoutWrapper cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+chatbot.py:404:15: WARNING: Using member tf.contrib.rnn.DropoutWrapper in deprecated module tf.contrib.rnn. (Manual edit required) tf.contrib.rnn.* has been deprecated, and widely used cells/functions will be moved to tensorflow/addons repository. Please check it there and file Github issues if necessary.
+chatbot.py:404:15: ERROR: Using member tf.contrib.rnn.DropoutWrapper in deprecated module tf.contrib. tf.contrib.rnn.DropoutWrapper cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+chatbot.py:407:13: WARNING: Using member tf.contrib.seq2seq.TrainingHelper in deprecated module tf.contrib.seq2seq. (Manual edit required) tf.contrib.seq2seq.* have been migrated to `tfa.seq2seq.*` in TensorFlow Addons. Please see https://github.com/tensorflow/addons for more info.
+chatbot.py:407:13: ERROR: Using member tf.contrib.seq2seq.TrainingHelper in deprecated module tf.contrib. tf.contrib.seq2seq.TrainingHelper cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+chatbot.py:409:14: WARNING: Using member tf.contrib.seq2seq.BasicDecoder in deprecated module tf.contrib.seq2seq. (Manual edit required) tf.contrib.seq2seq.* have been migrated to `tfa.seq2seq.*` in TensorFlow Addons. Please see https://github.com/tensorflow/addons for more info.
+chatbot.py:409:14: ERROR: Using member tf.contrib.seq2seq.BasicDecoder in deprecated module tf.contrib. tf.contrib.seq2seq.BasicDecoder cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+chatbot.py:412:20: WARNING: Using member tf.contrib.seq2seq.dynamic_decode in deprecated module tf.contrib.seq2seq. (Manual edit required) tf.contrib.seq2seq.* have been migrated to `tfa.seq2seq.*` in TensorFlow Addons. Please see https://github.com/tensorflow/addons for more info.
+chatbot.py:412:20: ERROR: Using member tf.contrib.seq2seq.dynamic_decode in deprecated module tf.contrib. tf.contrib.seq2seq.dynamic_decode cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+chatbot.py:446:22: WARNING: tf.nn.embedding_lookup requires manual check. `partition_strategy` has been removed from tf.nn.embedding_lookup.  The 'div' strategy will be used by default.
+chatbot.py:672:24: WARNING: Using member tf.contrib.seq2seq.sequence_loss in deprecated module tf.contrib.seq2seq. (Manual edit required) tf.contrib.seq2seq.* have been migrated to `tfa.seq2seq.*` in TensorFlow Addons. Please see https://github.com/tensorflow/addons for more info.
+chatbot.py:672:24: ERROR: Using member tf.contrib.seq2seq.sequence_loss in deprecated module tf.contrib. tf.contrib.seq2seq.sequence_loss cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+chatbot.py:677:22: WARNING: Using member tf.contrib.seq2seq.sequence_loss in deprecated module tf.contrib.seq2seq. (Manual edit required) tf.contrib.seq2seq.* have been migrated to `tfa.seq2seq.*` in TensorFlow Addons. Please see https://github.com/tensorflow/addons for more info.
+chatbot.py:677:22: ERROR: Using member tf.contrib.seq2seq.sequence_loss in deprecated module tf.contrib. tf.contrib.seq2seq.sequence_loss cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+chatbot.py:746:8: WARNING: *.save requires manual check. (This warning is only applicable if the code saves a tf.Keras model) Keras model.save now saves to the Tensorflow SavedModel format by default, instead of HDF5. To continue saving to HDF5, add the argument save_format='h5' to the save() function.
+chatbot.py:857:8: WARNING: *.save requires manual check. (This warning is only applicable if the code saves a tf.Keras model) Keras model.save now saves to the Tensorflow SavedModel format by default, instead of HDF5. To continue saving to HDF5, add the argument save_format='h5' to the save() function.
+================================================================================
+Detailed log follows:
+
+================================================================================
+--------------------------------------------------------------------------------
+Processing file 'chatbot.py'
+ outputting to 'chatbot1.py'
+--------------------------------------------------------------------------------
+
+216:0: WARNING: *.save requires manual check. (This warning is only applicable if the code saves a tf.Keras model) Keras model.save now saves to the Tensorflow SavedModel format by default, instead of HDF5. To continue saving to HDF5, add the argument save_format='h5' to the save() function.
+217:0: WARNING: *.save requires manual check. (This warning is only applicable if the code saves a tf.Keras model) Keras model.save now saves to the Tensorflow SavedModel format by default, instead of HDF5. To continue saving to HDF5, add the argument save_format='h5' to the save() function.
+381:19: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+382:13: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+383:14: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+384:19: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+394:12: INFO: Renamed 'tf.contrib.rnn.MultiRNNCell' to 'tf.compat.v1.nn.rnn_cell.MultiRNNCell'
+394:41: WARNING: Using member tf.contrib.rnn.DropoutWrapper in deprecated module tf.contrib.rnn. (Manual edit required) tf.contrib.rnn.* has been deprecated, and widely used cells/functions will be moved to tensorflow/addons repository. Please check it there and file Github issues if necessary.
+394:41: ERROR: Using member tf.contrib.rnn.DropoutWrapper in deprecated module tf.contrib. tf.contrib.rnn.DropoutWrapper cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+394:71: INFO: Renamed 'tf.contrib.rnn.LSTMCell' to 'tf.compat.v1.nn.rnn_cell.LSTMCell'
+404:15: WARNING: Using member tf.contrib.rnn.DropoutWrapper in deprecated module tf.contrib.rnn. (Manual edit required) tf.contrib.rnn.* has been deprecated, and widely used cells/functions will be moved to tensorflow/addons repository. Please check it there and file Github issues if necessary.
+404:15: ERROR: Using member tf.contrib.rnn.DropoutWrapper in deprecated module tf.contrib. tf.contrib.rnn.DropoutWrapper cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+407:13: WARNING: Using member tf.contrib.seq2seq.TrainingHelper in deprecated module tf.contrib.seq2seq. (Manual edit required) tf.contrib.seq2seq.* have been migrated to `tfa.seq2seq.*` in TensorFlow Addons. Please see https://github.com/tensorflow/addons for more info.
+407:13: ERROR: Using member tf.contrib.seq2seq.TrainingHelper in deprecated module tf.contrib. tf.contrib.seq2seq.TrainingHelper cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+409:14: WARNING: Using member tf.contrib.seq2seq.BasicDecoder in deprecated module tf.contrib.seq2seq. (Manual edit required) tf.contrib.seq2seq.* have been migrated to `tfa.seq2seq.*` in TensorFlow Addons. Please see https://github.com/tensorflow/addons for more info.
+409:14: ERROR: Using member tf.contrib.seq2seq.BasicDecoder in deprecated module tf.contrib. tf.contrib.seq2seq.BasicDecoder cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+412:20: WARNING: Using member tf.contrib.seq2seq.dynamic_decode in deprecated module tf.contrib.seq2seq. (Manual edit required) tf.contrib.seq2seq.* have been migrated to `tfa.seq2seq.*` in TensorFlow Addons. Please see https://github.com/tensorflow/addons for more info.
+412:20: ERROR: Using member tf.contrib.seq2seq.dynamic_decode in deprecated module tf.contrib. tf.contrib.seq2seq.dynamic_decode cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+445:37: INFO: Renamed 'tf.random_uniform' to 'tf.random.uniform'
+446:22: INFO: Added keywords to args of function 'tf.nn.embedding_lookup'
+446:22: WARNING: tf.nn.embedding_lookup requires manual check. `partition_strategy` has been removed from tf.nn.embedding_lookup.  The 'div' strategy will be used by default.
+448:12: INFO: Renamed 'tf.contrib.rnn.MultiRNNCell' to 'tf.compat.v1.nn.rnn_cell.MultiRNNCell'
+448:41: INFO: Renamed 'tf.contrib.rnn.LSTMCell' to 'tf.compat.v1.nn.rnn_cell.LSTMCell'
+449:9: INFO: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+450:23: INFO: Renamed 'tf.layers.Dense' to 'tf.compat.v1.layers.Dense'
+453:13: INFO: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+461:9: INFO: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+461:43: INFO: Renamed 'tf.AUTO_REUSE' to 'tf.compat.v1.AUTO_REUSE'
+672:24: WARNING: Using member tf.contrib.seq2seq.sequence_loss in deprecated module tf.contrib.seq2seq. (Manual edit required) tf.contrib.seq2seq.* have been migrated to `tfa.seq2seq.*` in TensorFlow Addons. Please see https://github.com/tensorflow/addons for more info.
+672:24: ERROR: Using member tf.contrib.seq2seq.sequence_loss in deprecated module tf.contrib. tf.contrib.seq2seq.sequence_loss cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+677:22: WARNING: Using member tf.contrib.seq2seq.sequence_loss in deprecated module tf.contrib.seq2seq. (Manual edit required) tf.contrib.seq2seq.* have been migrated to `tfa.seq2seq.*` in TensorFlow Addons. Please see https://github.com/tensorflow/addons for more info.
+677:22: ERROR: Using member tf.contrib.seq2seq.sequence_loss in deprecated module tf.contrib. tf.contrib.seq2seq.sequence_loss cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+678:17: INFO: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+678:35: INFO: Renamed 'tf.get_variable_scope' to 'tf.compat.v1.get_variable_scope'
+679:28: INFO: Renamed 'tf.train.AdamOptimizer' to 'tf.compat.v1.train.AdamOptimizer'
+682:17: INFO: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+682:35: INFO: Renamed 'tf.get_variable_scope' to 'tf.compat.v1.get_variable_scope'
+683:28: INFO: Renamed 'tf.train.AdamOptimizer' to 'tf.compat.v1.train.AdamOptimizer'
+710:12: INFO: Renamed 'tf.train.Saver' to 'tf.compat.v1.train.Saver'
+711:11: INFO: Renamed 'tf.InteractiveSession' to 'tf.compat.v1.InteractiveSession'
+718:8: INFO: Renamed 'tf.global_variables_initializer' to 'tf.compat.v1.global_variables_initializer'
+746:8: WARNING: *.save requires manual check. (This warning is only applicable if the code saves a tf.Keras model) Keras model.save now saves to the Tensorflow SavedModel format by default, instead of HDF5. To continue saving to HDF5, add the argument save_format='h5' to the save() function.
+754:4: INFO: Renamed 'tf.reset_default_graph' to 'tf.compat.v1.reset_default_graph'
+763:20: INFO: Renamed 'tf.get_default_graph' to 'tf.compat.v1.get_default_graph'
+770:15: INFO: Renamed 'tf.InteractiveSession' to 'tf.compat.v1.InteractiveSession'
+771:16: INFO: Renamed 'tf.train.Saver' to 'tf.compat.v1.train.Saver'
+776:12: INFO: Renamed 'tf.global_variables_initializer' to 'tf.compat.v1.global_variables_initializer'
+783:20: INFO: Renamed 'tf.InteractiveSession' to 'tf.compat.v1.InteractiveSession'
+784:21: INFO: Renamed 'tf.train.Saver' to 'tf.compat.v1.train.Saver'
+857:8: WARNING: *.save requires manual check. (This warning is only applicable if the code saves a tf.Keras model) Keras model.save now saves to the Tensorflow SavedModel format by default, instead of HDF5. To continue saving to HDF5, add the argument save_format='h5' to the save() function.
+918:11: INFO: Renamed 'tf.InteractiveSession' to 'tf.compat.v1.InteractiveSession'
+920:12: INFO: Renamed 'tf.train.Saver' to 'tf.compat.v1.train.Saver'
+--------------------------------------------------------------------------------
+
