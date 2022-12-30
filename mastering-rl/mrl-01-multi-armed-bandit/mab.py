@@ -17,9 +17,9 @@ class Casino():
     def __init__(self, bandits):
         self.bandits = bandits
         np.random.shuffle(self.bandits)
-        self.reset_game()
+        self.resetGame()
 
-    def reset_game(self):
+    def resetGame(self):
         self.rewards = []
         self.totalReward = 0
         self.nPlayed = 0
@@ -37,7 +37,7 @@ class Casino():
 
         while True:
             print("-- Round: " + str(self.nPlayed))
-            choice = int(input("Choose a machine from 1 to " + str(len(self.bandits))))
+            choice = int(input("Choose a machine from 1 to " + str(len(self.bandits)) + ": "))
 
             if choice in range(1, len(self.bandits) + 1):
                 reward = self.play(choice)
@@ -46,7 +46,7 @@ class Casino():
                 print("Average Reward is " + str(avgReward))
             else:
                 break
-        print("Game has ended")
+        print("\nGame has ended")
         if self.nPlayed > 0:
             print("Total reward is " + str(self.totalReward) + "after " + str(self.nPlayed) + " round(s).")
             avgReward = self.totalReward/self.nPlayed
