@@ -8,8 +8,10 @@ node_modules
 
 # custom ignores
 /venv/
-/cv_projects_venv/
-/rl_projects_venv/
+/venv_mrl/
+/venv_cv/
+/venv_rlp/
+
 /Python-Reinforcement-Learning-Projects-master/
 /ml-az-course-files/
 /cv-project-2-object-detection/
