@@ -10,7 +10,7 @@ class Bandit():
 
     def pullLever(self):
         reward = np.random.normal(self.mean, self.stdev)
-        return np,round(reward, 1)
+        return np.round(reward, 1)
 
 
 class Casino():
