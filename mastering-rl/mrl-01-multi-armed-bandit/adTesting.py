@@ -1,7 +1,10 @@
 import numpy as np
 import pandas as pd
-import cufflinks as cf
-import plotly.offline
+#import cufflinks as cf
+#from plotly.offline import iplot
+#import plotly
+#import plotly.graph_objs as go
+import matplotlib.pyplot as plt
 
 class Advert():
     """
@@ -17,46 +20,58 @@ class Advert():
 class ABNTesting():
     def __init__(self, ads):
         #A/B Testing
-        nTest = 10000
-        nProd = 90000
-        nAds = len(ads)
-        Q = np.zeros(nAds) # action values
-        N = np.zeros(nAds) # total impressions
+        self.nTest = 10000
+        self.nProd = 90000
+        self.nAds = len(ads)
+        self.Q = np.zeros(self.nAds) # action values
+        self.N = np.zeros(self.nAds) # total impressions
 
-        totalReward = 0
-        avgRewards = [] #save average reward over time
+        self.totalReward = 0
+        self.avgRewards = [] #save average reward over time
 
         #A/B/n test
-        self.choose(ads, nTest,nAds, N, Q, avgRewards, nProd, totalReward)
+        self.choose(ads)
 
     
-    def choose(self, ads, nTest, nAds, N, Q, avgRewards, nProd, totalReward):
-        for i in range(nTest):
-            adChosen = np.random.randint(nAds)
+    def choose(self, ads):
+        for i in range(self.nTest):
+            adChosen = np.random.randint(self.nAds)
             R = ads[adChosen].displayAd() # observe reward
-            N[adChosen] += 1
-            Q[adChosen] += (1/N[adChosen]) * (R-Q[adChosen])
-            totalReward += R
-            avgReward = totalReward / (i+1)
-            avgRewards.append(avgReward)
+            self.N[adChosen] += 1
+            self.Q[adChosen] += (1/self.N[adChosen]) * (R-self.Q[adChosen])
+            self.totalReward += R
+            avgReward = self.totalReward / (i+1)
+            self.avgRewards.append(avgReward)
 
-        bestAd = np.argmax(Q) #find best action
+        bestAd = np.argmax(self.Q) #find best action
         print("Best Performing Ad: " + chr(ord('A') + bestAd))
 
         adChosen = bestAd
-        for i in range(nProd):
+        for i in range(self.nProd):
             R = ads[adChosen].displayAd()
-            totalReward += R
-            avgReward = totalReward / (i+1)
-            avgRewards.append(avgReward)
+            self.totalReward += R
+            avgReward = self.totalReward / (i+1)
+            self.avgRewards.append(avgReward)
 
-        dfRewardComparision = pd.DataFrame(avgReward, columns=['A/B/n'])
+        dfRewardComparision = pd.DataFrame(self.avgRewards, columns=['A/B/n'])
 
-        cf.go_offline()
-        cf.set_config_file(world_readable=True, theme='white')
+        #cf.go_offline() #will make cufflinks offline to avoid Authentication credentials not provided error
+        #cf.set_config_file(offline=False, world_readable=True, theme='white')
 
-        dfRewardComparision['A/B/n'].iplot(title="A/B/n Test Avg. Reward: {:.4f}".format(avgReward),xTitle='Impressions', yTitle='Avg. Reward')
+        #print(dfRewardComparision['A/B/n'])
 
+        self.plotGraph(dfRewardComparision, avgReward) #will open plot in a webbrowser
+
+    def plotGraph(self, data, avgReward):
+        fig = data['A/B/n'].plot(
+            title="A/B/n Test Avg. Reward: {:.4f}".format(avgReward),
+            xlabel='Impressions', 
+            ylabel='Avg. Reward', 
+            color='r')
+        #fig.set_ylim([0,0.04])
+        fig.set_xticks(np.arange(0, 100000, step=10000))
+        fig
+        plt.show()
 
 class EpsilonGreedy():
     def __init__(self, a):
@@ -115,5 +130,5 @@ if __name__ == "__main__":
     adD = Advert(0.028)
     adE = Advert(0.031)
     ads = [adA, adB, adC, adD, adE]
-    EpsilonGreedy(ads)
+    #EpsilonGreedy(ads)
 
