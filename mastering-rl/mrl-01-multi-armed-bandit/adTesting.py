@@ -1,10 +1,7 @@
 import numpy as np
 import pandas as pd
-#import cufflinks as cf
-#from plotly.offline import iplot
-#import plotly
-#import plotly.graph_objs as go
-import matplotlib.pyplot as plt
+import cufflinks as cf
+from plotly.offline import plot
 
 class Advert():
     """
@@ -55,23 +52,12 @@ class ABNTesting():
 
         dfRewardComparision = pd.DataFrame(self.avgRewards, columns=['A/B/n'])
 
-        #cf.go_offline() #will make cufflinks offline to avoid Authentication credentials not provided error
-        #cf.set_config_file(offline=False, world_readable=True, theme='white')
+        cf.go_offline()
+        cf.set_config_file(world_readable=True, theme='white')
 
-        #print(dfRewardComparision['A/B/n'])
+        dfRewardComparision['A/B/n'].plot(title="A/B/n Test Avg. Reward: {:.4f}".format(avgReward),xTitle='Impressions', yTitle='Avg. Reward')
 
-        self.plotGraph(dfRewardComparision, avgReward) #will open plot in a webbrowser
 
-    def plotGraph(self, data, avgReward):
-        fig = data['A/B/n'].plot(
-            title="A/B/n Test Avg. Reward: {:.4f}".format(avgReward),
-            xlabel='Impressions', 
-            ylabel='Avg. Reward', 
-            color='r')
-        #fig.set_ylim([0,0.04])
-        fig.set_xticks(np.arange(0, 100000, step=10000))
-        fig
-        plt.show()
 
 class EpsilonGreedy():
     def __init__(self, a):
