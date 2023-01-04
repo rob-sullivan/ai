@@ -8,8 +8,11 @@ node_modules
 
 # custom ignores
 /venv/
-/rl_projects_venv/
-cv_projects_venv
+/venv_cv/
+/venv_mrl/
+/venv_rlp/
+/rl-projects/
+/mastering-rl/
 
 /Python-Reinforcement-Learning-Projects-master/
 /ml-az-course-files/
