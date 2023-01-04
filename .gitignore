@@ -13,6 +13,8 @@ node_modules
 /venv_rlp/
 /rl-projects/
 /mastering-rl/
+/cv-project-4-smart-cropping/data/
+/cv-project-4-smart-cropping/cropped/
 
 /Python-Reinforcement-Learning-Projects-master/
 /ml-az-course-files/
