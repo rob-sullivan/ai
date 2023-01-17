@@ -54,6 +54,7 @@ Using computer vision and Ai to create a face happiness detector, object detecto
 2. Object Detection
 3. Generative Adversarial Networks
 
-## PySparks
+## Big Data
+- PySparks
 
 
