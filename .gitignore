@@ -13,6 +13,10 @@ node_modules
 /venv_rlp/
 /rl-projects/
 /mastering-rl/
+
+/cv-project-2-object-detection/ssd300_mAP_77.43_v2.pth
+/cv-project-2-object-detection/funny_dog.mp4
+/cv-project-2-object-detection/output.mp4
 /cv-project-4-smart-cropping/data/
 /cv-project-4-smart-cropping/cropped/
 
