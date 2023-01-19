@@ -20,8 +20,16 @@ def detect(frame, net, transform):
     #it should always be the the index of dimension of the batch (always first dimension)
     #torch tensor of inputs to a torch variable (tensor + gradient)
     x = Variable(x.unsqueeze(0))
-    y = net(x)
-    detections = y.data
+    y = net(x) #output ssd and extract important data into detections
+    detections = y.data #torch tensor
     #upper left corner width, height, lower right corner width, height
     scale = torch.Tensor([width, height, width, height]) #needed to normalise images between zero and one
+
+    #detections = [batch, # of classes, car-plane-car, # of occurance how many of a class, tuple (score>0.5-found, x0,y0, x1, y1)]
+    #need for loop to loop through detection
+
+    for i in range(detections.size(1)):
+        j = 0 #class
+        while detections[0, i, j, 0]>0.6:
+            pt = (detections[0, i, j, 1:] * scale).numpy() #now collects coordinates
 

@@ -1,0 +1,2 @@
+ - went to https://pytorch.org/get-started/locally/ to install pytorch
+pip3 install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu116
