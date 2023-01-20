@@ -8,21 +8,30 @@ node_modules
 
 # custom ignores
 /venv/
+/venv_mrl/
+/venv_cv/
+/venv_rlp/
+
+/Python-Reinforcement-Learning-Projects-master/
+/ml-az-course-files/
+/cv-project-2-object-detection/
+/rl-projects/rl-project-00-convolutional-neural-network/logs/
+/rl-projects/rl-project-00-convolutional-neural-network/saves/
+
+# custom ignores
+/venv/
 /venv_cv/
 /venv_mrl/
 /venv_rlp/
 /rl-projects/
 /mastering-rl/
 
-/cv-project-2-object-detection/ssd300_mAP_77.43_v2.pth
+/cv-vision/cv-project-2-object-detection/ssd300_mAP_77.43_v2.pth
 /cv-project-2-object-detection/funny_dog.mp4
 /cv-project-2-object-detection/biscuit.mp4
 /cv-project-2-object-detection/output.mp4
 /cv-project-4-smart-cropping/data/
 /cv-project-4-smart-cropping/cropped/
-
-/Python-Reinforcement-Learning-Projects-master/
-/ml-az-course-files/
 
 # Log files
 npm-debug.log*
