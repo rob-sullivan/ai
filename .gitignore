@@ -12,11 +12,24 @@ node_modules
 /venv_cv/
 /venv_rlp/
 
-/Python-Reinforcement-Learning-Projects-master/
-/ml-az-course-files/
-/cv-project-2-object-detection/
+
+
+
+
+# python environments ignores
+/venv/
+/venv_cv/
+/venv_mrl/
+/venv_rlp/
+
+#ignore other project folders
+/cv-vision/
+/mastering-rl
+
+#ignore specific project folders
 /rl-projects/rl-project-00-convolutional-neural-network/logs/
 /rl-projects/rl-project-00-convolutional-neural-network/saves/
+
 
 # Log files
 npm-debug.log*
