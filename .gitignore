@@ -18,20 +18,23 @@ node_modules
 /rl-projects/rl-project-00-convolutional-neural-network/logs/
 /rl-projects/rl-project-00-convolutional-neural-network/saves/
 
-# custom ignores
+# python environments ignores
 /venv/
 /venv_cv/
 /venv_mrl/
 /venv_rlp/
+
+#ignore other project folders
 /rl-projects/
 /mastering-rl/
 
+#ignore specific project folders
 /cv-vision/cv-project-2-object-detection/ssd300_mAP_77.43_v2.pth
 /cv-vision/cv-project-2-object-detection/funny_dog.mp4
 /cv-vision/cv-project-2-object-detection/biscuit.mp4
 /cv-vision/cv-project-2-object-detection/output.mp4
-/cv-project-4-smart-cropping/data/
-/cv-project-4-smart-cropping/cropped/
+/cv-vision/cv-project-4-smart-cropping/data/
+/cv-vision/cv-project-4-smart-cropping/cropped/
 
 # Log files
 npm-debug.log*
