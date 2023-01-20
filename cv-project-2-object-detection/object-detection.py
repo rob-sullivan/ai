@@ -1,4 +1,8 @@
 #ref: https://github.com/amdegroot/ssd.pytorch
+# Note: pytorch had updated removing the need for autograd 'Variable', several changes needed to be made
+# to this python file, the ssd.py, l2norm.py and box_utils.py
+
+
 #import libraries
 import torch #pytorch to build nn for cv because it has dynamic graphs, so we can efficiently compute gradient composition functions in backward propagation, (i.e update weights through stocastic gradient decent in deep nn hidden layers)
 ##update the code for new PyTorch
@@ -29,6 +33,13 @@ def detect(frame, net, transform):
     with torch.no_grad():
         y = net(x)
 
+    """
+    ref: https://stackoverflow.com/questions/72504734/what-is-the-purpose-of-with-torch-no-grad
+    The requires_grad argument tells PyTorch that we want to be able to calculate the gradients for those values. 
+    However, the with torch.no_grad() tells PyTorch to not calculate the gradients, and the program explicitly uses it with most neural networks
+    in order to not update the gradients when it is updating the weights as that would affect the back propagation.
+    """
+
     detections = y.data #torch tensor
     #upper left corner width, height, lower right corner width, height
     scale = torch.Tensor([width, height, width, height]) #needed to normalise images between zero and one
@@ -40,10 +51,9 @@ def detect(frame, net, transform):
         j = 0 #class
         while detections[0, i, j, 0]>0.6:
             pt = (detections[0, i, j, 1:] * scale).numpy() #now collects coordinates
-            cv2.rectangle(frame, (int(pt[0]), int(pt[1])), (int(pt[2]), int(pt[3])), (255, 0, 0), 2) #image, xy,colour,thickness
-            cv2.putText(frame, 'Biscuit' if(labelmap[i-1]=='dog') else 'Rob' if(labelmap[i-1]=='person') else labelmap[i-1], (int(pt[0]), int(pt[1])), cv2.FONT_HERSHEY_SIMPLEX, 2, (255,255,255), 2, cv2.LINE_AA)
+            cv2.rectangle(frame, (int(pt[0]), int(pt[1])), (int(pt[2]), int(pt[3])), (255, 0, 0), 2) #image, xy coordinates, colour(red), thickness
+            cv2.putText(frame, 'Biscuit' if(labelmap[i-1]=='dog') else 'Rob' if(labelmap[i-1]=='person') else labelmap[i-1], (int(pt[0]), int(pt[1])), cv2.FONT_HERSHEY_SIMPLEX, 2, (255,255,255), 2, cv2.LINE_AA) # image, text string, x-y coordinates, font, font scale, colour, font thickness, line type
             j += 1
-    
     return frame
 
 # create SSD neural network
