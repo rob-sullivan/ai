@@ -23,3 +23,5 @@
 
 
 # Mastering Reinforcement Learning with Python
+1. multi-armed bandits
+2. Contextual bandits
