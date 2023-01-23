@@ -3,6 +3,8 @@ Copyright (c) 2017 Max deGroot, Ellis Brown
 Released under the MIT license
 https://github.com/amdegroot/ssd.pytorch
 Updated by: Takuya Mouri and me
+
+training sets: http://host.robots.ox.ac.uk/pascal/VOC/index.html
 """
  
 import torch
