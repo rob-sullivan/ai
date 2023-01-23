@@ -6,18 +6,6 @@ node_modules
 .env.local
 .env.*.local
 
-# custom ignores
-/venv/
-/venv_mrl/
-/venv_cv/
-/venv_rlp/
-
-/Python-Reinforcement-Learning-Projects-master/
-/ml-az-course-files/
-/cv-project-2-object-detection/
-/rl-projects/rl-project-00-convolutional-neural-network/logs/
-/rl-projects/rl-project-00-convolutional-neural-network/saves/
-
 # python environments ignores
 /venv/
 /venv_cv/
@@ -33,6 +21,7 @@ node_modules
 /cv-vision/cv-project-2-object-detection/videos/
 /cv-vision/cv-project-4-smart-cropping/data/
 /cv-vision/cv-project-4-smart-cropping/cropped/
+/cv-vision/cv-project-2-object-detection/data/VOCdevkit
 
 # Log files
 npm-debug.log*
