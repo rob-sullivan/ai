@@ -52,7 +52,8 @@ def detect(frame, net, transform):
         while detections[0, i, j, 0]>0.6:
             pt = (detections[0, i, j, 1:] * scale).numpy() #now collects coordinates
             cv2.rectangle(frame, (int(pt[0]), int(pt[1])), (int(pt[2]), int(pt[3])), (255, 0, 0), 2) #image, xy coordinates, colour(red), thickness
-            cv2.putText(frame, 'Biscuit' if(labelmap[i-1]=='dog') else 'Rob' if(labelmap[i-1]=='person') else labelmap[i-1], (int(pt[0]), int(pt[1])), cv2.FONT_HERSHEY_SIMPLEX, 2, (255,255,255), 2, cv2.LINE_AA) # image, text string, x-y coordinates, font, font scale, colour, font thickness, line type
+            #cv2.putText(frame, 'Biscuit' if(labelmap[i-1]=='dog') else 'Rob' if(labelmap[i-1]=='person') else labelmap[i-1], (int(pt[0]), int(pt[1])), cv2.FONT_HERSHEY_SIMPLEX, 2, (255,255,255), 2, cv2.LINE_AA) # image, text string, x-y coordinates, font, font scale, colour, font thickness, line type
+            cv2.putText(frame, labelmap[i-1], (int(pt[0]), int(pt[1])), cv2.FONT_HERSHEY_SIMPLEX, 2, (255,255,255), 2, cv2.LINE_AA) # image, text string, x-y coordinates, font, font scale, colour, font thickness, line type
             j += 1
     return frame
 
@@ -65,9 +66,9 @@ net.load_state_dict(torch.load('ssd300_mAP_77.43_v2.pth', map_location = lambda 
 transform = BaseTransform(net.size, (104/256.0, 117/256.0, 123/256.0))
 
 #object detection on video
-reader = imageio.get_reader('biscuit.mp4')#funny_dog.mp4
+reader = imageio.get_reader('videos/epic_horses.mp4')#funny_dog.mp4, biscuit.mp4
 fps = reader.get_meta_data()['fps']
-writer = imageio.get_writer('output.mp4', fps=fps)
+writer = imageio.get_writer('videos/output1.mp4', fps=fps)
 
 for i, frame in enumerate(reader):
     frame = detect(frame, net.eval(), transform)
