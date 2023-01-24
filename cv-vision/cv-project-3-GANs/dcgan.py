@@ -31,3 +31,22 @@ def weights_init(m):
     elif classname.find('BatchNorm') != -1:
         m.weight.data.normal_(1.0, 0.02)
         m.bias.data.fill_(0)
+
+#define the generator
+class Generator(nn.Module):
+    def __init__(self):
+        super(Generator, self).__init__()
+        self.main = nn.Sequential(
+            nn.ConvTranspose2d(100, 512, 4, 1, 0, bias=False), #100 is size of input, 512 is size of output feature map, 4 is kernal as in size 4x4, stride and padding and bias.
+            nn.BatchNorm2d(512), #normalise each feature map using batch norm.
+            nn.ReLU(True), #apply activation to break linearity
+            nn.ConvTranspose2d(512, 256, 4, 2, 1, bias=False), # input is now output of previous. 256 was done through research
+            nn.BatchNorm2d(256),
+            nn.ReLU(True),
+            nn.ConvTranspose2d(256, 128, 4, 2, 1, bias=False),
+            nn.BatchNorm2d(128),
+            nn.ReLU(True),
+            nn.ConvTranspose2d(256, 64, 4, 2, 1, bias=False),
+            nn.BatchNorm2d(64),
+            nn.ReLU(True),
+        )
