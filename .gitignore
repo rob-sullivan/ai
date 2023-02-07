@@ -6,11 +6,23 @@ node_modules
 .env.local
 .env.*.local
 
-# custom ignores
+# python environments ignores
 /venv/
-/Python-Reinforcement-Learning-Projects-master/
-/ml-az-course-files/
+/venv_cv/
+/venv_mrl/
+/venv_rlp/
 
+#ignore other project folders
+/rl-projects/
+/mastering-rl/
+/cv-vision/
+/course-notes/
+#ignore specific project folders
+/cv-vision/cv-project-2-object-detection/ssd300_mAP_77.43_v2.pth
+/cv-vision/cv-project-2-object-detection/videos/
+/cv-vision/cv-project-4-smart-cropping/data/
+/cv-vision/cv-project-4-smart-cropping/cropped/
+/cv-vision/cv-project-2-object-detection/data/VOCdevkit
 
 # Log files
 npm-debug.log*
@@ -26,3 +38,4 @@ yarn-error.log*
 *.sln
 *.sw?
 .Rproj.user
+
