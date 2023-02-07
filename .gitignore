@@ -18,12 +18,15 @@ node_modules
 /mastering-rl/
 /cv-vision/
 /course-notes/
+
 #ignore specific project folders
 /cv-vision/cv-project-2-object-detection/ssd300_mAP_77.43_v2.pth
 /cv-vision/cv-project-2-object-detection/videos/
 /cv-vision/cv-project-4-smart-cropping/data/
 /cv-vision/cv-project-4-smart-cropping/cropped/
 /cv-vision/cv-project-2-object-detection/data/VOCdevkit
+
+/dl/dl-project-2-cnn/dataset/
 
 # Log files
 npm-debug.log*

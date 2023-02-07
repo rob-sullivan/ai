@@ -113,6 +113,7 @@ class CNN():
             units = self.units[0],
             activation = self.activation[0],
         ))
+        
         #5 output layer
         self.cnn.add(tf.keras.layers.Dense(
             units = self.units[1],

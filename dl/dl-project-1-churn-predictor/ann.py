@@ -3,7 +3,8 @@ import numpy as np
 import pandas as pd
 #pip install tensorflow-cpu not tensorflow then test with command:
 #python -c "import tensorflow as tf;print(tf.reduce_sum(tf.random.normal([1000, 1000])))"
-import tensorflow as tf 
+import tensorflow as tf #pip install tensorflow
+#pip install -U scikit-learn
 from sklearn.preprocessing import LabelEncoder
 from sklearn.compose import ColumnTransformer
 from sklearn.preprocessing import OneHotEncoder
@@ -19,7 +20,7 @@ class Ann():
         #ai parameters
         self.lhp = [6, 6, 1] # layer hyper parameters
         self.af = ['relu', 'sigmoid'] #activation functions (softmax must be used if using categories)
-        self.op = 'adam' #optimiser = adam stocast grad decent (loss error on preditions)
+        self.op = 'adam' #optimiser = adam Stochastic gradient descent (loss error on preditions)
         self.lf = 'binary_crossentropy' #loss function (for binary otherwise you use category_crossentropy)
         self.met = 'accuracy' #metrics
         self.bs = 32 #number of batches to take to train
@@ -90,7 +91,7 @@ class Ann():
 
 if __name__ == "__main__":
     #run artificial neural network
-    ai = Ann('churn_data.csv')
+    ai = Ann('churn_data.csv')#preprocess data, build then train ANN
 
     """
     Test ANN model by predicting if the customer with the following informations will leave the bank: 
@@ -108,5 +109,5 @@ if __name__ == "__main__":
     """
     observation = [1, 0, 0, 600, 0, 40, 3, 60000, 2, 1, 1, 50000]
     ai.predict(observation)
-    ai.predictTest()
+    ai.predictTest()#use model on test data and print confusion matrix
     
