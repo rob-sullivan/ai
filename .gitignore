@@ -8,6 +8,7 @@ node_modules
 
 # python environments ignores
 /venv/
+/venv_dl/
 /venv_cv/
 /venv_mrl/
 /venv_rlp/
