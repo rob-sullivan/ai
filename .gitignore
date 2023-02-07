@@ -12,11 +12,13 @@ node_modules
 /venv_cv/
 /venv_mrl/
 /venv_rlp/
+/venv_ml/
 
 #ignore other project folders
 /rl-projects/
 /mastering-rl/
 /cv-vision/
+/ml/
 /course-notes/
 
 #ignore specific project folders
