@@ -22,6 +22,9 @@ node_modules
 /rl-projects
 /cv-project-4-smart-cropping/
 
+/data/
+.ipynb_checkpoints/
+
 # Log files
 npm-debug.log*
 yarn-debug.log*
@@ -36,3 +39,4 @@ yarn-error.log*
 *.sln
 *.sw?
 .Rproj.user
+
