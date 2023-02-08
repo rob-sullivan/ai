@@ -11,14 +11,17 @@ node_modules
 /venv_mrl/
 /venv_cv/
 /venv_rlp/
+/venv_dl/
+/venv_ml/
 
 /Python-Reinforcement-Learning-Projects-master/
 /ml-az-course-files/
 /cv-project-2-object-detection/
 /rl-projects/rl-project-00-convolutional-neural-network/logs/
 /rl-projects/rl-project-00-convolutional-neural-network/saves/
-/rl-projects
-/cv-project-4-smart-cropping/
+/rl-projects/
+/cv-vision/
+/dl/
 
 # Log files
 npm-debug.log*
