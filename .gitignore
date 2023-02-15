@@ -15,11 +15,14 @@ node_modules
 # python environments ignores
 /venv/
 /venv_cv/
+/venv_dl/
+/venv_ml/
 /venv_mrl/
 /venv_rlp/
 
 #ignore other project folders
 /cv-vision/
+/dl/
 
 #ignore specific project folders
 /rl-projects/rl-project-00-convolutional-neural-network/logs/
