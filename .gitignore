@@ -13,11 +13,13 @@ node_modules
 /venv_rlp/
 /venv_dl/
 /venv_ml/
+
 #ignore other project folders
 /rl-projects/
 /mastering-rl/
 /dl/
-
+/ml/
+/course-notes/
 
 #ignore specific project folders
 /cv-vision/cv-project-2-object-detection/ssd300_mAP_77.43_v2.pth
