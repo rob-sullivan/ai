@@ -68,7 +68,7 @@ Step = namedtuple('Step', ['state', 'action', 'reward', 'done'])
 
 """### Making the AI progress on several (n_step) steps"""
 
-class NStepProgress:
+class NStepProgress:#https://dbobrenko.github.io/2016/11/03/async-deeprl.html
     
     def __init__(self, env, ai, n_step):
         self.ai = ai
