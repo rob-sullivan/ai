@@ -20,6 +20,8 @@ node_modules
 /dl/
 /ml/
 /course-notes/
+*results/
+*data/
 
 #ignore specific project folders
 /cv-vision/cv-project-2-object-detection/ssd300_mAP_77.43_v2.pth
