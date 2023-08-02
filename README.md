@@ -9,6 +9,7 @@ Install CUDA version on Windows 10 without a Conda environment.
 * If CUDA is 11.7 go to [CUB](https://github.com/NVIDIA/cub/releases) and download [version 1.17](https://github.com/NVIDIA/cub/archive/refs/tags/1.17.0.zip) then go to where CUB folder is e.g C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.7\include\cub and replace it with the downloaded 1.17 [source 1](https://github.com/facebookresearch/pytorch3d/issues/1567), [source 2](https://github.com/facebookresearch/pytorch3d/issues/1227)
 * If CUDA is 11.7 add: #define THRUST_IGNORE_CUB_VERSION_CHECK true to version.cuh in C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.7\include\cub
 * install pytorch3d: pip install git+https://github.com/facebookresearch/pytorch3d.git@stable
+* pip install open3d
 
 
 ## 3d Data Processing
