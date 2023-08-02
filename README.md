@@ -1,6 +1,6 @@
 # 3d Deep Learning
 ## Installation
-Install on Windows 10 without a Conda environment.
+Install CUDA version on Windows 10 without a Conda environment.
 
 * python3 -m venv venv_3dl
 * go to [pytorch's website](https://pytorch.org/) to find the correct install command e.g: pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu117
