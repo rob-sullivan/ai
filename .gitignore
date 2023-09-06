@@ -12,10 +12,12 @@ node_modules
 /venv_mrl/
 /venv_cv/
 /venv_rlp/
+/venv_3dl/
 
 /dl/
 /rl-projects/
 /cv-vision/
+/3d-dl/
 
 # Log files
 npm-debug.log*
