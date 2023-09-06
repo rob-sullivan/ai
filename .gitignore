@@ -13,6 +13,7 @@ node_modules
 /venv_cv/
 /venv_rlp/
 /venv_3dl/
+/venv_nlp/
 
 /dl/
 /rl-projects/
