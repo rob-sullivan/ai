@@ -19,6 +19,8 @@ node_modules
 /rl-projects/
 /cv-vision/
 /3d-dl/
+*data/
+*dataset/
 
 # Log files
 npm-debug.log*
