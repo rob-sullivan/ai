@@ -8,12 +8,14 @@ node_modules
 
 # python environments ignores
 /venv/
-/venv_dl/
-/venv_cv/
-/venv_mrl/
-/venv_rlp/
-/venv_ml/
+
 /venv_3dl/
+/venv_cv/
+/venv_dl/
+/venv_ml/
+/venv_mrl/
+/venv_nlp/
+/venv_rlp/
 
 #ignore other project folders
 /rl-projects/
@@ -22,6 +24,7 @@ node_modules
 /dl/
 /course-notes/
 /3d-dl/
+/nlp/
 
 #ignore specific project folders
 /cv-vision/cv-project-2-object-detection/ssd300_mAP_77.43_v2.pth
