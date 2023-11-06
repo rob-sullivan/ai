@@ -14,12 +14,10 @@ node_modules
 
 # python environments ignores
 /venv/
-/venv_cv/
-/venv_dl/
-/venv_ml/
-/venv_mrl/
-/venv_rlp/
-
+/venv_*
+/nlp/
+/dl/
+/3d-dl/
 #ignore other project folders
 /cv-vision/
 /dl/
