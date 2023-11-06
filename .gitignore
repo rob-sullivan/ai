@@ -14,7 +14,7 @@ node_modules
 #ignore other project folders
 /rl-projects/
 /mastering-rl/
-/dl/
+/dl*
 /ml/
 /course-notes/
 *data/
