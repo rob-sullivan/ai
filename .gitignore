@@ -7,12 +7,9 @@ node_modules
 .env.*.local
 
 # python environments ignores
-/venv/
-/venv_cv/
-/venv_mrl/
-/venv_rlp/
-/venv_dl/
-/venv_ml/
+/venv_*
+
+
 
 #ignore other project folders
 /rl-projects/
@@ -21,7 +18,9 @@ node_modules
 /ml/
 /course-notes/
 *data/
-
+/nlp/
+/3d-dl/
+*.gif
 #ignore specific project folders
 /cv-vision/cv-project-2-object-detection/ssd300_mAP_77.43_v2.pth
 /cv-vision/cv-project-2-object-detection/videos/
