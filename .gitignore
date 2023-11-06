@@ -10,11 +10,8 @@ node_modules
 
 # python environments ignores
 /venv/
-/venv_cv/
-/venv_mrl/
-/venv_rlp/
-/venv_dl/
-/venv_ml/
+/venv_*
+
 
 #ignore other project folders
 /rl-projects/
@@ -23,7 +20,8 @@ node_modules
 /ml/
 /course-notes/
 /cv-vision/
-
+/3d-dl/
+/nlp/
 
 # Log files
 npm-debug.log*
