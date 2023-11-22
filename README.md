@@ -5,13 +5,12 @@
 2. Fine Tuning a BERT model from scratch
 
 ## Reinforcement Learning Projects
-Chatbot is trained on cornell movie-dialogs corpus to demonstrate policy gradient methods, long short-term memory (LSTM).
 1. Balancing a cart pole
 2. Playing atari games
 3. Simulating control tasks
 4. Virtual worlds in minecraft
 5. Learning to play go
-6. Chatbot
+6. Chatbot - trained on cornell movie-dialogs corpus to demonstrate policy gradient methods, long short-term memory (LSTM).
 7. Deep learning image classifier
 8. Predicting future stock prices
 
