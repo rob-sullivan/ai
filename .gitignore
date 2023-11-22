@@ -7,9 +7,12 @@ node_modules
 .env.*.local
 
 # custom ignores
-/venv/
-/Python-Reinforcement-Learning-Projects-master/
-/ml-az-course-files/
+/venv_*
+/3d-dl/
+/cv-vision/
+/dl/
+/nlp/
+/rl-projects/
 
 
 # Log files
