@@ -7,15 +7,10 @@ node_modules
 .env.*.local
 
 # custom ignores
-/venv_dl/
-/venv_ml/
-/venv_mrl/
-/venv_cv/
-/venv_rlp/
-/venv_3dl/
-/venv_nlp/
+/venv_*
 
 /dl/
+/ml/
 /rl-projects/
 /cv-vision/
 /3d-dl/
