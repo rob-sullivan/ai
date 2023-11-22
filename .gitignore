@@ -11,11 +11,13 @@ node_modules
 
 /dl/
 /ml/
+/nlp/
 /rl-projects/
 /cv-vision/
 /3d-dl/
 *data/
 *dataset/
+
 
 # Log files
 npm-debug.log*
