@@ -16,6 +16,7 @@ node_modules
 /3d-dl/
 *data/
 *dataset/
+/nlp/
 
 # Log files
 npm-debug.log*
