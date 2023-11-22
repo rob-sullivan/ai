@@ -1,16 +1,17 @@
 # Artificial Intelligence Projects and Code
 
-## AI Text Classification
-Training a supervised learning algorithm for text classification to categorise news articles by training a model through pytorch on [AG_NEWS](https://pytorch.org/tutorials/beginner/text_sentiment_ngrams_tutorial.html) dataset.
+## NLP & LLM
+1. Training a supervised learning algorithm for text classification to categorise news articles by training a model through pytorch on [AG_NEWS](https://pytorch.org/tutorials/beginner/text_sentiment_ngrams_tutorial.html) dataset.
+2. Transformer Architecture: position encoder & Multi headed attention
+3. Fine Tuning a BERT model from scratch
 
 ## Reinforcement Learning Projects
-Chatbot is trained on cornell movie-dialogs corpus to demonstrate policy gradient methods, long short-term memory (LSTM).
 1. Balancing a cart pole
 2. Playing atari games
 3. Simulating control tasks
 4. Virtual worlds in minecraft
 5. Learning to play go
-6. Chatbot
+6. Chatbot - trained on cornell movie-dialogs corpus to demonstrate policy gradient methods, long short-term memory (LSTM).
 7. Deep learning image classifier
 8. Predicting future stock prices
 
