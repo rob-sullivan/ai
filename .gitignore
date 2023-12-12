@@ -29,7 +29,8 @@ node_modules
 /cv-vision/cv-project-4-smart-cropping/cropped/
 /cv-vision/cv-project-2-object-detection/data/VOCdevkit
 
-/dl/dl-project-2-cnn/dataset/
+*dataset/
+*images/
 
 # Log files
 npm-debug.log*
