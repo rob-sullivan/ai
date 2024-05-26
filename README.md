@@ -5,17 +5,7 @@
 1. Training a supervised learning algorithm for text classification to categorise news articles by training a model through pytorch on [AG_NEWS](https://pytorch.org/tutorials/beginner/text_sentiment_ngrams_tutorial.html) dataset.
 2. Fine Tuning a BERT model from scratch
 
-## Reinforcement Learning Theory
-
-Using pytorch to create self driving cars, teach a computer to play the game doom and the classic game breakout.
-
-1. Fundamentals of Reinforcement Learning
-2. Q Learning
-3. Deep Q Learning
-4. Deep Convolutional Q-Learning
-5. Asynchronous Actor Critic (A3C)
-
-## Reinforcement Learning Practical
+## Reinforcement Learning Projects
 
 1. Balancing a cart pole
 2. Playing atari games
@@ -26,7 +16,17 @@ Using pytorch to create self driving cars, teach a computer to play the game doo
 7. Deep learning image classifier
 8. Predicting future stock prices
 
-## Deep Learning
+## Artificial Intelligence A-Z Course
+
+Using pytorch to create self driving cars, teach a computer to play the game doom and the classic game breakout.
+
+1. Fundamentals of Reinforcement Learning
+2. Q Learning
+3. Deep Q Learning
+4. Deep Convolutional Q-Learning
+5. Asynchronous Actor Critic (A3C)
+
+## Deep Learning A-Z Course
 
 Using pytorch to solve a Banking Customer Churn problem, Convolutional Neural Networks for Image Recognition, Recurrent Neural Networks to predict Stock Prices, Self-Organizing Maps to investigate Fraud, Boltzmann Machines to create a Recomender System and Stacked Autoencoders\* to take on the challenge for the Netflix $1 Million prize.
 
@@ -37,7 +37,7 @@ Using pytorch to solve a Banking Customer Churn problem, Convolutional Neural Ne
 5. Boltzmann Machines
 6. AutoEncoders
 
-## Machine Learning
+## Machine Learning A-Z Course
 
 Using Scikit Learn to do Data Preprocessing, Regression, Classification, Clustering, Association Rule Learning, Reinforcement Learning, Natural Language Processing, Deep Learning, Dimensionality Reduction (PCA, LDA, Kernel PCA), Model Selection & Boosting: k-fold Cross Validation, Parameter Tuning, Grid Search, XGBoost.
 
@@ -52,7 +52,7 @@ Using Scikit Learn to do Data Preprocessing, Regression, Classification, Cluster
 9. Dimensionality Reduction (PCA, LDA, Kernel PCA),
 10. Model Selection & Boosting: k-fold Cross Validation, Parameter Tuning, Grid Search, XGBoost
 
-## Deep Learning with Computer Vision
+## Deep Learning and Computer Vision A-Z Course
 
 Using computer vision and Ai to create a face happiness detector, object detector and image creator.
 
@@ -63,3 +63,5 @@ Using computer vision and Ai to create a face happiness detector, object detecto
 ## PySparks
 
 ## 3d Deep Learning
+
+## Football Tracking AI
