@@ -1,6 +1,6 @@
 # Football tracking
 
-I utilise a computer vision dataset from [Roboflow Universe](https://universe.roboflow.com/) for training. Original video footage and annotations were then converted by roboflow into a workable dataset.
+I utilise a computer vision dataset from [Roboflow Universe](https://universe.roboflow.com/) for training. Original video footage and annotations were then converted by roboflow into a workable dataset. Here is the [link](https://github.com/roboflow/notebooks/blob/main/notebooks/how-to-track-football-players.ipynb) to the tutorial I followed.
 
 ## Stage 1 - object detection
 
