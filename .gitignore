@@ -15,6 +15,7 @@ node_modules
 /rl-projects/
 /cv-vision/
 /3d-dl/
+airflow/
 /football-tracking/
 *data/
 *dataset/
