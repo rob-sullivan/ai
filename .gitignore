@@ -18,6 +18,9 @@ node_modules
 /data-engineering/
 *data/
 *dataset/
+*.mp4
+*.pt
+*.avi
 
 
 # Log files
