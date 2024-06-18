@@ -16,6 +16,7 @@ node_modules
 /cv-vision/
 /3d-dl/
 /data-engineering/
+/football-tracking/ByteTrack-main
 *data/
 *dataset/
 *.mp4
